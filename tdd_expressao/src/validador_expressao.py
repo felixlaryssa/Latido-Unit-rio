@@ -8,7 +8,7 @@ def main() -> None:
     OPERADORES = '+', '-', '*', '/'
     PARENTESES = '(', ')'
     expressao = obter_expressao()
-    
+    eh_expressao_valida(expressao) 
 
 
 if __name__ == '__main__':
