@@ -2,10 +2,15 @@ def obter_expressao() -> str:
     return input()
 
 def eh_expressao_valida(expressao: str):
+    """
+    Valida se a expressão é um número inteiro positivo simples.
+    (Refatorado - Ciclo 1)
     
-    if expressao.isdigit():
-        return True
-    return False
+    Refatoração: O 'if/else' foi removido pois .isdigit()
+    já retorna o valor booleano desejado.
+    """
+    
+    return expressao.isdigit()
 
 
 def ehExpressaoValida(expressao: str) -> bool:
