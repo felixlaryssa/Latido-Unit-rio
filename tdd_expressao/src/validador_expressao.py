@@ -1,7 +1,7 @@
 def obter_expressao() -> str:
     return input()
 
-def eh_expressao_valida(expressao: str): #tem que retornar bool
+def eh_expressao_valida(expressao: str) -> bool: #tem que retornar bool
     pass
 
 def main() -> None:
