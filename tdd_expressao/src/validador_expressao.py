@@ -3,16 +3,23 @@ import re
 def obter_expressao() -> str:
     return input()
 
+OPERADORES = {'+', '-', '*', '/'}
 
 def ehExpressaoValida(expressao: str) -> bool:
     expressao = expressao.strip().replace(" ", "")
+
+    if expressao[0] in OPERADORES or expressao[-1] in OPERADORES:
+        return False
     
-    padroes_validos = [
-        r"\d+",           # número simples
-        r"\d+\+\d+",      # soma simples
-    ]
+    # 1. É um número simples? 
+    if re.fullmatch(r"\d+", expressao):
+        return True
+        
+    # 2. É uma soma simples? 
+    if re.fullmatch(r"\d+\+\d+", expressao):
+        return True
     
-    return any(re.fullmatch(p, expressao) for p in padroes_validos)
+    return False
 
 
 
