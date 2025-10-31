@@ -8,16 +8,17 @@ OPERADORES = {'+', '-', '*', '/'}
 def ehExpressaoValida(expressao: str) -> bool:
     expressao = expressao.strip().replace(" ", "")
 
+    
+
     if expressao[0] in OPERADORES or expressao[-1] in OPERADORES:
         return False
     
-    # 1. É um número simples? 
-    if re.fullmatch(r"\d+", expressao):
-        return True
+    padrao_numero = r"^\d+$"
+    padrao_operacao_simples = r"^\d+[+\-*/]\d+$"
         
-    # 2. É uma soma simples? 
-    if re.fullmatch(r"\d+\+\d+", expressao):
-        return True
+    if re.fullmatch(padrao_numero, expressao) or \
+        re.fullmatch(padrao_operacao_simples, expressao):
+            return True
     
     return False
 

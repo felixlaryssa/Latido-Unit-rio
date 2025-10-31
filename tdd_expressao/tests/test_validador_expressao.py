@@ -17,5 +17,15 @@ def test_nao_deve_comecar_terminar_com_operador():
     assert not ehExpressaoValida("+1")
     assert not ehExpressaoValida("1+")
     assert not ehExpressaoValida(" * 5")
-    assert not ehExpressaoValida("5 / ") 
+    assert not ehExpressaoValida("5 / ")
 
+def test_aceita_outras_operacoes_simples():
+    """Testa se operadores simples (-, *, /) são válidos."""
+    assert ehExpressaoValida("1 - 1")
+    assert ehExpressaoValida("10 * 2")
+    assert ehExpressaoValida("100 / 5") 
+
+def test_rejeita_string_vazia_ou_so_de_espacos():
+    """Testa se uma string vazia ou só com espaços falha (Regra 6)."""
+    assert not ehExpressaoValida("")
+    assert not ehExpressaoValida("   ")
