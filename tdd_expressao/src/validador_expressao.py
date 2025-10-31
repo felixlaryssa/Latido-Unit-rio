@@ -8,7 +8,8 @@ OPERADORES = {'+', '-', '*', '/'}
 def ehExpressaoValida(expressao: str) -> bool:
     expressao = expressao.strip().replace(" ", "")
 
-    
+    if not expressao:
+        return False
 
     if expressao[0] in OPERADORES or expressao[-1] in OPERADORES:
         return False
